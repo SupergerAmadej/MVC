@@ -1,0 +1,21 @@
+﻿@model DSR_N2.Models.Klet
+
+<h4>Klet</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            @Html.LabelFor(a => a.Naziv)
+            @Html.TextBoxFor(a => a.Naziv)
+        </div>
+        <div>
+            @Html.LabelFor(a => a.Naslov)
+            @Html.TextBoxFor(a => a.Naslov)
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

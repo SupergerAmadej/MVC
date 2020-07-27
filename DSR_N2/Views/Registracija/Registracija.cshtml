@@ -1,0 +1,176 @@
+﻿@model DSR_N2.Models.UserWithGeslo
+
+@{
+    ViewData["Title"] = "Registracija";
+}
+
+<h1>Registracija</h1>
+<hr />
+<div class="row">
+
+    <div class="col-md-4">
+        @using (Html.BeginForm("Forma","Registracija"))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            @Html.EditorForModel()
+            <div class="form-group">
+                <input type="submit" value="Register" class="btn btn-primary" id="submitBtn" />
+            </div>
+        }
+
+    </div>
+    @*<div class="col-md-4">
+        <form asp-action="Forma">
+
+            <link rel="stylesheet" href="~/css/bootstrap.css" />
+
+            <div id="rootwizard">
+                <div class="navbar">
+                    <div class="navbar-inner">
+                        <div class="container">
+                            <ul>
+                                <li><a href="#tab1" data-toggle="tab">Korak 1</a></li>
+                                <li><a href="#tab2" data-toggle="tab">Korak 2</a></li>
+                                <li><a href="#tab3" data-toggle="tab">Korak 3</a></li>
+                                <li><a href="#tab4" data-toggle="tab">Korak 4</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane" id="tab1">
+                        <div class="form-group">
+                            <label asp-for="EMSO" class="control-label"></label>
+                            <input asp-for="EMSO" class="form-control" />
+                            <span asp-validation-for="EMSO" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Ime" class="control-label"></label>
+                            <input asp-for="Ime" class="form-control" />
+                            <span asp-validation-for="Ime" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Priimek" class="control-label"></label>
+                            <input asp-for="Priimek" class="form-control" />
+                            <span asp-validation-for="Priimek" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="All" class="text-danger"></div>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <div class="form-group">
+                            <label asp-for="Datum_Roj" class="control-label"></label>
+                            <input asp-for="Datum_Roj" class="form-control" id="datepicker" />
+                            <script>
+                                $(function () {
+                                    $("#datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+                                });
+                            </script>
+                            <span asp-validation-for="Datum_Roj" id="datum" class="text-danger"></span>
+
+                            
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Kraj_Roj" class="control-label"></label>
+                            <select asp-for="Kraj_Roj" class="form-control" asp-items="@DSR_N2.Models.User.KrajiRojstva()"></select>
+                            <span asp-validation-for="Kraj_Roj" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <div class="form-group">
+                            <label asp-for="Naslov" class="control-label"></label>
+                            <input asp-for="Naslov" class="form-control" />
+                            <span asp-validation-for="Naslov" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <label asp-for="Postna_Stevilka" class="control-label"></label>
+                            <input asp-for="Postna_Stevilka" class="form-control" id="inp" />
+                            <div id="posta"></div>
+                            <script>
+                                $(function () {
+                                    $('#posta').slider({
+                                        //create: function () {
+                                        //    //$('#inp').text($(this).slider("value"));
+                                        //    $('#inp').val($(this).slider("value"));
+                                        //},
+                                        slide: function (event, ui) {
+                                            //$('#inp').text(ui.value);
+                                            $('#inp').val(ui.value);
+                                            //alert($('#inp').text());
+                                        },
+                                        max: 10000,
+                                        min: 0,
+                                    });
+                                });
+                            </script>
+                            <span asp-validation-for="Postna_Stevilka" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Drzava" class="control-label"></label>
+                            <input asp-for="Drzava" class="form-control" />
+                            <span asp-validation-for="Drzava" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="tab4">
+                        <div class="form-group">
+                            <label asp-for="Geslo" class="control-label"></label>
+                            <input asp-for="Geslo" id="pass" class="form-control" type="password" />
+                            <span asp-validation-for="Geslo" class="text-danger"></span>
+                        </div>
+
+
+                        <div>
+                            <label class="control-label">Confirm Geslo</label>
+                            <input id="pass2" type="password" class="form-control" />
+                        </div>
+
+                        <script>
+                            $(function () {
+                                $('#pass, #pass2').on('keyup', function () {
+                                    if ($('#pass').val() == $('#pass2').val()) {
+                                        $('#submitBtn').prop("disabled", false);
+                                    }
+                                    else {
+                                        $('#submitBtn').prop("disabled", true);
+
+                                    }
+                                });
+                            });
+
+
+                        </script>
+
+                        <div class="form-group">
+                            <input type="submit" value="Register" class="btn btn-primary" disabled="disabled" id="submitBtn" />
+                        </div>
+
+
+                    </div>
+                    <ul class="pager wizard">
+                        <li class="previous first" style="display:none;"><a href="#">First</a></li>
+                        <li class="previous"><a href="#">Previous</a></li>
+                        <li class="next last" style="display:none;"><a href="#">Forth</a></li>
+                        <li class="next"><a href="#">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $('#rootwizard').bootstrapWizard();
+                });
+            </script>
+
+
+
+
+        </form>
+    </div>*@
+</div>
+

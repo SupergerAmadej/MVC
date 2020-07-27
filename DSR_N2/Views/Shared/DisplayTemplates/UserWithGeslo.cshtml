@@ -1,0 +1,72 @@
+﻿@model DSR_N2.Models.UserWithGeslo
+
+<div>
+    <h4>UserWithGeslo</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Priimek)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Priimek)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Datum_Roj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Datum_Roj)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Kraj_Roj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Kraj_Roj)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Starost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Starost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Naslov)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Naslov)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Postna_Stevilka)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Postna_Stevilka)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Drzava)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Drzava)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Geslo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Geslo)
+        </dd>
+    </dl>
+</div>
+@*<div>
+    <a asp-action="Edit" asp-route-id="@Model.EMSO">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>*@

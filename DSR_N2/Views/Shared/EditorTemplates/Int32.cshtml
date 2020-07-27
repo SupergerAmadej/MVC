@@ -1,0 +1,25 @@
+﻿@model int
+
+<div>
+    @Html.TextBox("",Model.ToString(),new { id = "inp" ,@class = "form-control" })
+    <div id="posta" >
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#posta').slider({
+            //create: function () {
+            //    //$('#inp').text($(this).slider("value"));
+            //    $('#inp').val($(this).slider("value"));
+            //},
+            slide: function (event, ui) {
+                //$('#inp').text(ui.value);
+                $('#inp').val(ui.value);
+                //alert($('#inp').text());
+            },
+            max: 9999,
+            min: 0,
+        });
+    });
+</script>

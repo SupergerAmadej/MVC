@@ -1,0 +1,15 @@
+﻿@model DateTime
+<div class='date datePicker '>
+    <div>
+        @Html.TextBox("", Model == null ? Model.ToString("dd/MM/yyyy") : String.Empty, new { @class = "form-control" })
+    </div>
+</div>
+<script type="text/javascript">
+    $(function() {
+        // target only the input in this editor template
+        $(function () {
+            $('#@Html.IdForModel()').datepicker({ dateFormat: 'dd/mm/yy' });
+        });
+
+    });
+</script>

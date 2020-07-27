@@ -1,0 +1,57 @@
+﻿@model DSR_N2.Models.User
+
+<h4>User</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <label asp-for="EMSO"></label>
+            @Html.TextBoxFor(a => a.EMSO)
+        </div>
+        <div>
+            <label asp-for="Ime"></label>
+            @Html.TextBoxFor(a => a.Ime)
+        </div>
+        <div>
+            <label asp-for="Priimek"></label>
+            @Html.TextBoxFor(a => a.Priimek)
+        </div>
+        <div>
+            <label asp-for="Email"></label>
+            @Html.TextBoxFor(a => a.Email)
+        </div>
+        <div>
+            <label asp-for="Datum_Roj"></label>
+            @Html.EditorFor(a => a.Datum_Roj)
+        </div>
+        <div>
+            <label asp-for="Kraj_Roj"></label>
+            @Html.TextBoxFor(a => a.Kraj_Roj)
+        </div>
+        <div>
+            <label asp-for="Starost"></label>
+            @Html.TextBoxFor(a => a.Starost)
+        </div>
+        <div>
+            <label asp-for="Naslov"></label>
+            @Html.TextBoxFor(a => a.Naslov)
+        </div>
+        <div>
+            <label asp-for="Postna_Stevilka"></label>
+            @Html.EditorFor(a => a.Postna_Stevilka)
+        </div>
+        @*<div>
+            <label asp-for="Drzava"></label>
+            @Html.TextBoxFor(a => a.Drzava)
+        </div>
+        <div>
+            <label asp-for="Geslo"></label>
+            @Html.TextBoxFor(a => a.Geslo)
+        </div>*@
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
