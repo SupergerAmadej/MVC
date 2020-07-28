@@ -3,7 +3,7 @@
 }
 
     <div class="text-center">
-        <h1 class="display-4">DSR N2 - Strelska Zveza</h1>
+        <h1 class="display-4">In Vino Veritas</h1>
         <h2 id="ura"></h2>
         <h3 id="datum"></h3>
 
@@ -19,7 +19,7 @@
 
             function updateClock() {
                 let a = new Date($.now())
-                $("#ura").text(a.getUTCHours() + ":" + (a.getMinutes() < 10 ? "0" + a.getMinutes() : a.getMinutes()) + ":" + (a.getSeconds() < 10 ? "0" + a.getSeconds() : a.getSeconds()));
+                $("#ura").text((a.getUTCHours()+2) + ":" + (a.getMinutes() < 10 ? "0" + a.getMinutes() : a.getMinutes()) + ":" + (a.getSeconds() < 10 ? "0" + a.getSeconds() : a.getSeconds()));
                 $("#datum").text(a.toDateString());
             }
 
